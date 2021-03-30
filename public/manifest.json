@@ -1,24 +1,25 @@
 {
   "manifestVersion": "2.0.0",
-  "pluginVersion": "0.1.2",
+  "pluginVersion": "0.2.0",
   "name": {
-    "en": "Demo Plugin - Step 1a",
-    "de": "Demo Plugin - Step 1a"
+    "en": "Demo Plugin - Step 2",
+    "de": "Demo Plugin - Step 2"
   },
   "description": {
     "en": "A simple demo plug-in",
     "de": "Ein einfaches Beispiel-Plug-in"
   },
+  "context": ["userName"],
   "entryPoints": [
     {
       "id": "510e9e0c-e3b8-44a8-8db1-5185d3d844ce",
       "name": {
-        "en": "View 1",
-        "de": "Ansicht 1"
+        "en": "Personal View 1",
+        "de": "Persönliche Ansicht 1"
       },
       "description": {
-        "en": "Displaying view 1",
-        "de": "Ansicht 1 wird angezeigt"
+        "en": "Greeting the user",
+        "de": "Persönlicher Gruß"
       },
       "url": "/ep1.html"
     },
