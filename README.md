@@ -24,6 +24,7 @@ For following along the tutorial checkout the respective branch for the step.
 ```sh
 git checkout 1-static
 git checkout 1a-static-entrypoints
+git checkout 2-frontend-data
 ```
 
 ## Prerequisites
@@ -40,12 +41,13 @@ To also deploy it to Heroku you will additionally need:
 Checkout the step/branch you want to test.
 Once run `npm install` to fetch all dependencies given in your `package.json`.
 
-Run the `start` task using [`npm`](https://docs.npmjs.com/getting-started/what-is-npm).
+Run the `build` and `start` task using [`npm`](https://docs.npmjs.com/getting-started/what-is-npm).
 
 ```sh
-npm run start
+npm run build;
+npm run start;
 ```
-All static files from the `/public` folder are now served at `http://localhost:5000`
+All static files from the built `/dist` folder are now served at `http://localhost:5000`
 
 ## Deploying to Heroku
 
@@ -57,5 +59,5 @@ Run `git push heroku <your-branch>:master`.
 
 Run `heroku open`.
 
-All files from the `/public` folder are now directly available at your heroku instance,
+Heroku builds the project and serves the `/dist` folder at your heroku instance,
 e.g. https://coyo-plugins-getting-started.herokuapp.com/manifest.json 
