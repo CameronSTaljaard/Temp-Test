@@ -1,6 +1,6 @@
 {
-  "manifestVersion": "2.0.0",
-  "pluginVersion": "0.2.0",
+  "manifestVersion": "2.2.0",
+  "pluginVersion": "2.2.0",
   "name": {
     "en": "Demo Plugin - Step 2",
     "de": "Demo Plugin - Step 2"
