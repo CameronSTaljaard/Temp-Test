@@ -5,7 +5,8 @@ export class DemoPlugin {
         new PluginAdapter().init().then(data => {
             const name = data['ctx.userName'];
             const email = data['ctx.userEmail'];
-            console.log(data);
+            console.log(data['ctx.userName']);
+            console.log(data['ctx.userEmail']);
             this.changeVariables(name, email);
         });
     }
