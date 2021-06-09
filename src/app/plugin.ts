@@ -6,7 +6,9 @@ export class DemoPlugin {
             const name = data['ctx.userName'];
             const email = data['ctx.userEmail'];
             console.log(data['ctx.userName']);
-            console.log(data['context.userEmail']);
+            console.log(data['ctx.userEmail']);
+            console.log(data['userName']);
+            console.log(data['userEmail']);
             this.changeVariables(name, email);
         });
     }
