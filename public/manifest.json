@@ -1,6 +1,6 @@
 {
-  "manifestVersion": "2.2.0",
-  "pluginVersion": "2.2.0",
+  "manifestVersion": "2.0.0",
+  "pluginVersion": "2.0.1",
   "name": {
     "en": "Demo Plugin - Step 2",
     "de": "Demo Plugin - Step 2"
@@ -9,7 +9,7 @@
     "en": "A simple demo plug-in",
     "de": "Ein einfaches Beispiel-Plug-in"
   },
-  "data": [
+  "context": [
     "userEmail",
     "userName"
   ],
