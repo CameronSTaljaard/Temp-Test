@@ -15,8 +15,11 @@ export class DemoPlugin {
         nameElem.innerText = userName;
     }
 
-    private changeEmail(userEmail: string) {
-        const emailElem = document.getElementById('userEmail')!;
-        emailElem.innerText = userEmail;
+    private changeEmail(userEmail) {
+        //const emailElem = document.getElementById('userEmail')!;
+        var emailElem = document.querySelectorAll('email');
+        emailElem = userEmail;
+        
+        //emailElem.innerText = userEmail;
     }
 }
