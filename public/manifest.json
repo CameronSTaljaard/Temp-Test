@@ -9,7 +9,10 @@
     "en": "A simple demo plug-in",
     "de": "Ein einfaches Beispiel-Plug-in"
   },
-  "context": ["userEmail", "userName"],
+  "context": [
+    "userEmail",
+    "userName"
+  ],
   "entryPoints": [
     {
       "id": "510e9e0c-e3b8-44a8-8db1-5185d3d844ce",
