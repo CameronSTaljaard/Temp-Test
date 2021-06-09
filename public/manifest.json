@@ -9,7 +9,7 @@
     "en": "A simple demo plug-in",
     "de": "Ein einfaches Beispiel-Plug-in"
   },
-  "context": [
+  "data": [
     "userEmail",
     "userName"
   ],
