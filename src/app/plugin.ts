@@ -5,7 +5,7 @@ export class DemoPlugin {
     constructor() {
         new PluginAdapter().init().then(data => {
             const name = data['ctx.userName'];
-            const email = data['ctx.userEmail'];
+            const email = jwtDecode["data.userEmail"];
             this.changeName(name);
             this.changeEmail(email);
         });
@@ -17,7 +17,7 @@ export class DemoPlugin {
     }
 
     private changeEmail(userEmail: string) {
-        const emailElem = jwtDecode('data.userEmail');
+        const emailElem = document.getElementById('userEmail')!;
         emailElem.innerText = userEmail;
     }
 }
