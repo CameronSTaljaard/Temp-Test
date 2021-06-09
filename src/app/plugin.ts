@@ -1,4 +1,5 @@
 import {PluginAdapter} from '@coyoapp/plugin-adapter';
+import jwtDecode from 'jwt-decode';
 
 export class DemoPlugin {
     constructor() {
@@ -16,7 +17,7 @@ export class DemoPlugin {
     }
 
     private changeEmail(userEmail: string) {
-        const emailElem = document.getElementById('userEmail')!;
+        const emailElem = jwtDecode('data.userEmail');
         emailElem.innerText = userEmail;
     }
 }
