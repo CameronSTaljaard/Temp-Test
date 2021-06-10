@@ -1,4 +1,5 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
+const axios = require('axios');
 
 export class AccountPlugin {
   constructor() {
