@@ -1,13 +1,13 @@
 {
   "manifestVersion": "2.0.0",
-  "pluginVersion": "2.1.0",
+  "pluginVersion": "2.1.1",
   "name": {
-    "en": "Demo Plugin - Step 2",
-    "de": "Demo Plugin - Step 2"
+    "en": "Staffomatic v2",
+    "de": "Staffomatic v2"
   },
   "description": {
-    "en": "A simple demo plug-in",
-    "de": "Ein einfaches Beispiel-Plug-in"
+    "en": "Staffomatic widget update",
+    "de": "Staffomatic widget update"
   },
   "context": [
     "userEmail",
