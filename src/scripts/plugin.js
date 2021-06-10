@@ -15,21 +15,20 @@ export class DemoPlugin {
         nameElem.innerText = userName;
     }
 
-    accountLookup(userEmail) {
-      let xhr = new XMLHttpRequest();
-      let url = "https://api.staffomaticapp.com/v3/accounts";
-      xhr.open("POST", url, true);
-      let email = userEmail;
-      let lookup_token = "MF7FXPqcrBQENtmQoUnE";
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            let json = JSON.parse(xhr.responseText);
-            console.log(json.email + ", " + json.lookup_token);
-            console.log(xhr.responseText);
+    accountLookup(email) {
+      let staffomatic_url = "https://api.staffomaticapp.com/v3/accounts";
+      let token = "MF7FXPqcrBQENtmQoUnE";
+      $.ajax({
+        type: "POST",
+        url: staffomatic_url,
+        // The key needs to match your method's input parameter (case-sensitive).
+        data: JSON.stringify({ lookup_token: token, userEmail: email}),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data){console.log(data);},
+        error: function(e) {
+            console.log(e);
         }
-      };
-      let data = JSON.stringify({"email": email, "lookup_token": lookup_token});
-      xhr.send(data);
+    });
     }
 }
