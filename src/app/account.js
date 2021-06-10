@@ -5,9 +5,15 @@ export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
       const email = data['ctx.userEmail'];
-      var data = await this.lookupAccounts(email);
-      console.log({data: data});
+      this.accountExists(email);
     });
+  }
+
+  accountExists(email) {
+    var data = await this.lookupAccounts(email);
+    data.then(
+      console.log({data})
+    )
   }
 
   lookupAccounts(email) {
