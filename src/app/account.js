@@ -1,6 +1,7 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
 const https = require('https')
 
+
 export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
@@ -20,45 +21,21 @@ export class AccountPlugin {
 
   lookupAccounts(userEmail) {
     return new Promise((resolve, reject) => {
-      const data = JSON.stringify({
-        lookup_token: 'MF7FXPqcrBQENtmQoUnE',
-        email: "cameronstaljaard@gmail.com"
-      })
-      const options = {
-        hostname: 'api.staffomaticapp.com',
-        port: 80,
-        path: '/v3/accounts',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': data.length,
-        },
-      }
-
-      const req = https.request(options, (res) => {
-        console.log(`statusCode: ${res.statusCode}`)
-      
-        res.on('data', (d) => {
-          console.log(d);
-          resolve(d);
-        })
-      })
-      
-      req.on('error', (error) => {
-        console.log(error)
-        reject(error);
-      })
-      
-      req.write(data)
-      req.end()
-    })
-      .then(function (response) {
-        console.log("Resolve");
-        resolve(response);
-      })
-      .catch(function (error) {
-        console.log("Reject");
-        reject(error);
+      request.post("https://api.staffomaticapp.com/v3/accounts", {
+        form: {
+          email: email,
+          lookup_token: "MF7FXPqcrBQENtmQoUnE"
+        }
+      }, (error, response, body) => {
+        console.log({ error: error })
+        if (error) reject(error);
+        console.log({ statusCode: response.statusCode })
+        console.log({ body: body })
+        if (response.statusCode != 200) {
+          reject(response);
+        }
+        resolve(JSON.parse(body));
       });
+    });
   }
 }
