@@ -21,7 +21,7 @@ export class DemoPlugin {
       const url = "https://api.staffomaticapp.com/v3/accounts";
       const params = {
         email: userEmail,
-        lookup: "MF7FXPqcrBQENtmQoUnE"
+        lookup_token: "MF7FXPqcrBQENtmQoUnE"
       };
       const options = {
         method: 'POST',
@@ -31,6 +31,6 @@ export class DemoPlugin {
         .then( response => response.json() )
         .then( response => {
           console.log(response);
-         } );
+         });
     }
 }
