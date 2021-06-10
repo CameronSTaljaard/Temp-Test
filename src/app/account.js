@@ -20,16 +20,17 @@ export class AccountPlugin {
 
   lookupAccounts(userEmail) {
     return new Promise((resolve, reject) => {
-      axios.post('https://api.staffomaticapp.com/v3/accounts', {
-        params: {
-          email: userEmail,
+      axios.post('https://api.staffomaticapp.com/v3/accounts', 
+      {
+          email: "CameronSTaljaard@gmail.com",
           lookup_token: 'MF7FXPqcrBQENtmQoUnE'
-        }
       })
       .then(function (response) {
+        console.log("Resolve");
         resolve(response);
       })
       .catch(function (error) {
+        console.log("Reject");
         reject(error);
       });
     });
