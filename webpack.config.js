@@ -9,7 +9,10 @@ module.exports = {
         filename: 'main.js'
     },
     resolve: {
-        extensions: [ '.ts', '.js' ]
+        extensions: [ '.ts', '.js' ],
+        fallback: {
+          util: require.resolve("util/")
+        }
     },
     module: {
         rules: [
