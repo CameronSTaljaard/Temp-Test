@@ -9,7 +9,7 @@ export class AccountPlugin {
     });
   }
 
-  accountExists(email) {
+  async accountExists(email) {
     var data = await this.lookupAccounts(email);
     data.then(
       console.log({data})
