@@ -1,5 +1,5 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
-const request = require("request");
+const request = require('request');
 
 
 export class AccountPlugin {
