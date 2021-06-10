@@ -18,7 +18,7 @@ export class DemoPlugin {
     }
 
     accountLookup(userEmail) {
-      let url = "cameronstaljaard@gmail.com";
+      let url = "https://api.staffomaticapp.com/v3/accounts";
       let lookup = "MF7FXPqcrBQENtmQoUnE";
       (async () => {
         const rawResponse = await fetch(url, {
