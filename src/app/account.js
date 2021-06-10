@@ -1,4 +1,5 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
+const axios = require('axios');
 
 export class AccountPlugin {
   constructor() {
@@ -8,12 +9,5 @@ export class AccountPlugin {
     });
   }
 
-  lookupAccounts (email) {
-    return fetch("https://api.staffomaticapp.com/v3/accounts", {
-        headers: {'Content-Type': 'application/json'},
-        json: true,
-        method: 'post',
-        body: JSON.stringify({email: email})
-      })
-  };
+  
 }

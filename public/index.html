@@ -8,6 +8,21 @@
     href="https://fonts.googleapis.com/css?family=Source Sans Pro"
   />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $.ajax({
+      type: "POST",
+      url: "https://api.staffomaticapp.com/v3/accounts",
+      crossDomain: true,
+      data: '{"email":"cameronstaljaard@gmail.com", "lookup_token":"MF7FXPqcrBQENtmQoUnE" }',
+      dataType: "json",
+      success: function(responseData, textStatus, jqXHR) {
+        console.log(responseData);
+      },
+      error: function(responseData, textStatus, errorThrown) {
+        alert("POST failed.");
+      },
+    });
+  </script>
 </head>
 <html>
   <body>
