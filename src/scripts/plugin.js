@@ -32,4 +32,41 @@ export class DemoPlugin {
         }
     });
     }
+
+    renderAccountsList (response) {
+      console.log(response)
+      var ul = document.getElementById("account-list");
+      toggleElement("account-list-wrapper")
+  
+      for (const element of response) {
+        var li = document.createElement("li");
+        li.setAttribute('id', element.id);
+  
+        // build link
+        var linkText = document.createTextNode(element.name)
+        var accountLink = document.createElement('a');
+        accountLink.appendChild(linkText);
+        accountLink.title = element.name;
+        if(element.app_version == "v3"){
+          accountLink.href = "https://" + element.account_subdomain + ".easypepapp.com";
+        }else{
+          accountLink.href = "https://" + element.account_subdomain + ".staffomatic.app";
+        }
+        //accountLink.target = "_blank"
+        li.appendChild(accountLink);
+        ul.appendChild(li);
+      }
+    }
+
+    handleAccountLookupResponse (data) {
+      console.log(data.length)
+      if(data.length > 0){
+        renderAccountsList(data)
+      }else if(!!data['error']){
+        console.error(data)
+        renderEmptyAccountsList()
+      }else{
+        renderEmptyAccountsList(data)
+      }
+    }
 }

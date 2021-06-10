@@ -17,26 +17,14 @@
     {
       "id": "510e9e0c-e3b8-44a8-8db1-5185d3d844ce",
       "name": {
-        "en": "Personal View 1",
-        "de": "Persönliche Ansicht 1"
+        "en": "Widget index",
+        "de": "Widget-Index"
       },
       "description": {
-        "en": "Greeting the user",
-        "de": "Persönlicher Gruß"
+        "en": "Widget landing page",
+        "de": "Widget landing page"
       },
-      "url": "/ep1.html"
-    },
-    {
-      "id": "4f434887-9289-48ac-986d-4ff1f37ab618",
-      "name": {
-        "en": "View 2",
-        "de": "Ansicht 2"
-      },
-      "description": {
-        "en": "Displaying view 2",
-        "de": "Ansicht 2 wird angezeigt"
-      },
-      "url": "/ep2.html"
+      "url": "/"
     }
   ]
 }
