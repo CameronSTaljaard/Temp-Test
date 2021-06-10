@@ -6,25 +6,16 @@ export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
       const email = data['ctx.userEmail'];
-      this.accountExists(email);
+      this.lookupAccounts(email);
     });
   }
 
-  lookupAccounts(userEmail) {
-    return new Promise((resolve, reject) => {
-      request.post("https://api.staffomaticapp.com/v3/accounts", {
-        form: {
-          email: userEmail,
-          lookup_token: "MF7FXPqcrBQENtmQoUnE"
-        }
-      }, function optionalCallback(err, httpResponse, body) {
-        if (err) {
-          console.error('upload failed:', err);
-          reject(res.status(500));
-        } else {
-          resolve(httpResponse);
-        }
-      });
-    });
-  }
+  lookupAccounts (email) {
+    return fetch("https://api.staffomaticapp.com/v3/accounts", {
+        headers: {'Content-Type': 'application/json'},
+        json: true,
+        method: 'post',
+        body: JSON.stringify({email: email})
+      })
+  };
 }
