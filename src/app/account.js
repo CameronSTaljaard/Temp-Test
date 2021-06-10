@@ -1,7 +1,7 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
 
 
-export class account {
+export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
       const email = data['ctx.userEmail'];
