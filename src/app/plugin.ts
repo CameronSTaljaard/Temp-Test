@@ -19,7 +19,7 @@ export class DemoPlugin {
 
     accountLookup(userEmail) {
       let url = "cameronstaljaard@gmail.com";
-      let lookup = "MF7FXPqcrBQENtmQoUnE"
+      let lookup = "MF7FXPqcrBQENtmQoUnE";
       (async () => {
         const rawResponse = await fetch(url, {
           method: 'POST',
