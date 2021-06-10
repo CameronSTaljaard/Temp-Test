@@ -1,4 +1,4 @@
-import {DemoPlugin} from './scripts/plugin';
+import {DemoPlugin} from './app/plugin';
 
 (function () {
     new DemoPlugin();
