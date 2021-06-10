@@ -5,7 +5,8 @@ export class DemoPlugin {
         new PluginAdapter().init().then(data => {
             const name = data['ctx.userName'];
             const email = data['ctx.userEmail'];
-            this.updateVariables(name, email);
+            this.updateVariables(name);
+            this.accountLookup(email);
         });
     }
 
