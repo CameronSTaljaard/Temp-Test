@@ -23,18 +23,23 @@ export class AccountPlugin {
     return new Promise((resolve, reject) => {
       request.post("https://api.staffomaticapp.com/v3/accounts", {
         form: {
-          email: email,
+          email: userEmail,
           lookup_token: "MF7FXPqcrBQENtmQoUnE"
         }
-      }, (error, response, body) => {
-        console.log({ error: error })
-        if (error) reject(error);
-        console.log({ statusCode: response.statusCode })
-        console.log({ body: body })
-        if (response.statusCode != 200) {
-          reject(response);
+      }, function optionalCallback(err, httpResponse, body) {
+        if (err) {
+          console.error('upload failed:', err);
+          reject(res.status(500));
+        } else {
+          resolve(httpResponse);
         }
-        resolve(JSON.parse(body));
+        //
+        // TODO: Check if the HTTP status code fits your expectations:
+        //
+        // if (httpResponse.status !== 201) {
+        //     return res.status(500);
+        // }
+        //
       });
     });
   }
