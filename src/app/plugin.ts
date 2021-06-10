@@ -18,20 +18,19 @@ export class DemoPlugin {
     }
 
     accountLookup(userEmail) {
-      let url = "https://api.staffomaticapp.com/v3/accounts";
-      let lookup = "MF7FXPqcrBQENtmQoUnE";
-      (async () => {
-        const rawResponse = await fetch(url, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({lookup_token: lookup, email: userEmail})
-        });
-        const content = await rawResponse.json();
-      
-        console.log(content);
-      })();
+      const url = "https://api.staffomaticapp.com/v3/accounts";
+      const params = {
+        email: userEmail,
+        lookup: "MF7FXPqcrBQENtmQoUnE"
+      };
+      const options = {
+        method: 'POST',
+        body: JSON.stringify( params )
+      };
+      fetch( url, options )
+        .then( response => response.json() )
+        .then( response => {
+          console.log(response);
+         } );
     }
 }
