@@ -4,18 +4,15 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: './src/index.ts',
-    node: {
-      net: 'empty',
-    },
     output: {
-        path: path.resolve( __dirname, 'dist' ),
-        filename: 'main.js'
+      path: path.resolve( __dirname, 'dist' ),
+      filename: 'main.js'
     },
     resolve: {
-        extensions: [ '.ts', '.js' ],
-        fallback: {
-          util: require.resolve("util/")
-        }
+      extensions: [ '.ts', '.js' ],
+      fallback: {
+        util: require.resolve("util/")
+      }
     },
     module: {
         rules: [
@@ -33,5 +30,6 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist/')
             }]
         })
-    ]
+    ],
+    target: 'node'
 };
