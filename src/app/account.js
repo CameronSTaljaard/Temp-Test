@@ -1,5 +1,5 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
-const https = require('https')
+const request = require("request");
 
 
 export class AccountPlugin {
