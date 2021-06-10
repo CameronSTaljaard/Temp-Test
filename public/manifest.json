@@ -1,6 +1,6 @@
 {
   "manifestVersion": "2.0.0",
-  "pluginVersion": "2.0.1",
+  "pluginVersion": "2.1.0",
   "name": {
     "en": "Demo Plugin - Step 2",
     "de": "Demo Plugin - Step 2"
@@ -24,7 +24,7 @@
         "en": "Widget landing page",
         "de": "Widget landing page"
       },
-      "url": "/"
+      "url": "/index"
     }
   ]
 }

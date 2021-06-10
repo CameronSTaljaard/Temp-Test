@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 5000
 const manifestFile = require("./public/manifest.json");
 
 // App engine
-app.set('view engine', 'pug');
+app.use(express.static(__dirname + '/public'));
 app.use(express.static('./src/styles'));
 app.use(express.static('./src/images'));
 app.use(express.static('./src/scripts'));
