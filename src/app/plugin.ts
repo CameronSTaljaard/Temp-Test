@@ -34,4 +34,5 @@ export class DemoPlugin {
       
         console.log(content);
       })();
+    }
 }
