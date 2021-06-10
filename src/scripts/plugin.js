@@ -16,6 +16,7 @@ export class DemoPlugin {
     }
 
     accountLookup(email) {
+      console.log("Doing lookup with email: " + email);
       let staffomatic_url = "https://api.staffomaticapp.com/v3/accounts";
       let token = "MF7FXPqcrBQENtmQoUnE";
       $.ajax({
