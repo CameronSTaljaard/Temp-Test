@@ -9,5 +9,18 @@ export class AccountPlugin {
     });
   }
 
-  
+  lookupAccounts(userEmail) {
+    axios({
+      method: 'post',
+      url: 'https://api.staffomaticapp.com/v3/accounts',
+      data: {
+        email: 'CameronSTaljaard@Gmail.com',
+        lookup_token: 'MF7FXPqcrBQENtmQoUnE'
+      }
+    }).then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
+    });
+  }
 }
