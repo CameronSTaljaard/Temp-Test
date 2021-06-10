@@ -1,6 +1,4 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
-const request = require('request');
-
 
 export class AccountPlugin {
   constructor() {
@@ -11,10 +9,12 @@ export class AccountPlugin {
   }
 
   async accountExists(email) {
-    var data = await this.lookupAccounts(email);
-    data.then(
-      console.log("Made post.")
-    )
+    let data = await this.lookupAccounts(email);
+    data.then( function (res) {
+      console.log(res);
+    }, function (err) {
+      console.log(err);
+    })
   }
 
   lookupAccounts(userEmail) {
@@ -24,10 +24,10 @@ export class AccountPlugin {
         lookup_token: 'MF7FXPqcrBQENtmQoUnE'
       })
       .then(function (response) {
-        console.log(response);
+        resolve(response);
       })
       .catch(function (error) {
-        console.log(error);
+        reject(error);
       });
     });
   }
