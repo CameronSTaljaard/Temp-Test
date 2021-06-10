@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 var router = express.Router();
 const PORT = process.env.PORT || 5000
+const manifestFile = require("./public/manifest.json");
 
 // App engine
 app.set('view engine', 'pug');
@@ -23,6 +24,10 @@ router.get('/', (req, res, next) => {
 	res.render('index', {
 		title:'Landing Page',
 	});
+});
+
+router.get('/manifest.json', (req, res, next) => {
+	res.json(manifestFile);
 });
 
 app.use('/', router);
