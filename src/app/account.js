@@ -21,8 +21,10 @@ export class AccountPlugin {
   lookupAccounts(userEmail) {
     return new Promise((resolve, reject) => {
       axios.post('https://api.staffomaticapp.com/v3/accounts', {
-        email: userEmail,
-        lookup_token: 'MF7FXPqcrBQENtmQoUnE'
+        params: {
+          email: userEmail,
+          lookup_token: 'MF7FXPqcrBQENtmQoUnE'
+        }
       })
       .then(function (response) {
         resolve(response);
