@@ -10,15 +10,6 @@ export class AccountPlugin {
     });
   }
 
-  async accountExists(email) {
-    let data = await this.lookupAccounts(email);
-    data.then(function (res) {
-      console.log(res);
-    }, function (err) {
-      console.log(err);
-    })
-  }
-
   lookupAccounts(userEmail) {
     return new Promise((resolve, reject) => {
       request.post("https://api.staffomaticapp.com/v3/accounts", {
@@ -33,13 +24,6 @@ export class AccountPlugin {
         } else {
           resolve(httpResponse);
         }
-        //
-        // TODO: Check if the HTTP status code fits your expectations:
-        //
-        // if (httpResponse.status !== 201) {
-        //     return res.status(500);
-        // }
-        //
       });
     });
   }
