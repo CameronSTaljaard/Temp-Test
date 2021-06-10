@@ -1,12 +1,12 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
-//const request = require('request');
+const request = require('request');
 
 
 export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
       const email = data['ctx.userEmail'];
-      //this.accountExists(email);
+      this.accountExists(email);
     });
   }
 
