@@ -17,22 +17,20 @@ export class DemoPlugin {
         emailElem.innerText = userEmail;
     }
 
-    accountLookup(email) {
+    accountLookup(userEmail) {
       let url = "cameronstaljaard@gmail.com";
-      let lookup = "MF7FXPqcrBQENtmQoUnE";
+      let lookup = "MF7FXPqcrBQENtmQoUnE"
       (async () => {
         const rawResponse = await fetch(url, {
           method: 'POST',
           headers: {
-            'email': email,
-            'lookup_token': lookup,
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({a: 1, b: 'Textual content'})
+          body: JSON.stringify({lookup_token: lookup, email: userEmail})
         });
         const content = await rawResponse.json();
       
         console.log(content);
       })();
-    }
 }
