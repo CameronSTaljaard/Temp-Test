@@ -1,4 +1,6 @@
 import { PluginAdapter } from '@coyoapp/plugin-adapter';
+const https = require('https')
+const request = require('request')
 const axios = require('axios');
 
 export class AccountPlugin {
@@ -11,7 +13,7 @@ export class AccountPlugin {
 
   async accountExists(email) {
     let data = await this.lookupAccounts(email);
-    data.then( function (res) {
+    data.then(function (res) {
       console.log(res);
     }, function (err) {
       console.log(err);
@@ -20,15 +22,38 @@ export class AccountPlugin {
 
   lookupAccounts(userEmail) {
     return new Promise((resolve, reject) => {
-      axios.post('https://api.staffomaticapp.com/v3/accounts?email=cameronstaljaard@gmail.com&lookup_token=MF7FXPqcrBQENtmQoUnE',{
-        //headers: {
-        //  'Access-Control-Allow-Origin': '*',
-        //},
-        //data: {
-        //    email: "CameronSTaljaard@gmail.com",
-        //    lookup_token: 'MF7FXPqcrBQENtmQoUnE'
-        //}
+      const data = JSON.stringify({
+        lookup_token: 'MF7FXPqcrBQENtmQoUnE',
+        email: "cameronstaljaard@gmail.com"
       })
+      const options = {
+        hostname: 'api.staffomaticapp.com',
+        port: 80,
+        path: '/v3/accounts',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': data.length,
+        },
+      }
+
+      const req = https.request(options, (res) => {
+        console.log(`statusCode: ${res.statusCode}`)
+      
+        res.on('data', (d) => {
+          console.log(d);
+          resolve(d);
+        })
+      })
+      
+      req.on('error', (error) => {
+        console.log(error)
+        reject(error);
+      })
+      
+      req.write(data)
+      req.end()
+    })
       .then(function (response) {
         console.log("Resolve");
         resolve(response);
@@ -37,6 +62,5 @@ export class AccountPlugin {
         console.log("Reject");
         reject(error);
       });
-    });
   }
 }
