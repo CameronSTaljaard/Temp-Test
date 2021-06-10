@@ -5,13 +5,13 @@ export class AccountPlugin {
   constructor() {
     new PluginAdapter().init().then(data => {
       const email = data['ctx.userEmail'];
-      this.lookupAccounts(email);
+      var data = await this.lookupAccounts(email);
+      console.log({data: data});
     });
   }
 
   lookupAccounts(email) {
-    //return new Promise((resolve, reject) => {
-      // request.post("", {
+    return new Promise((resolve, reject) => {
       request.post("https://api.staffomaticapp.com/v3/accounts", {
         form: {
           email: email,
@@ -28,6 +28,6 @@ export class AccountPlugin {
         }
         resolve(JSON.parse(body));
       });
-    //});
+    });
   }
 }
