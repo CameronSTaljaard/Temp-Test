@@ -17,3 +17,4 @@ TODO:
   - [ ] Bring the user to a registration page if they have not yet signed up.
   - [ ] Bring the user to a login page for their account is they have only one account.
 - [ ] Style the main widget page to be visually appealing and match the Staffomatic style.
+- [ ] Add npm testing and lint.
