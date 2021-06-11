@@ -10,6 +10,8 @@ app.use(express.json());
 // use the express-static middleware
 app.use(express.static(path.join(__dirname, 'dist')));
 
+app.set('view engine', 'html');
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
