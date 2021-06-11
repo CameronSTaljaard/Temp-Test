@@ -18,6 +18,7 @@ Deploy with:
     Outside of git, Node and npm are not needed. The ./dist folder that is built is what should be delivered and has an index file at its root.
 
     After being built, ./dist/index.html needs to be the default landing page and is entirely static.
+    This folder will contain all public node files, such as the manifest.json.
 
 ## Local testing.
   - Install node version 14.x.
