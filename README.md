@@ -19,6 +19,7 @@ Deploy with:
   - run ```$ npm start```
 
     npm run build will build the node modules into static files in ./dist
+    
     npm start will do as expected and simply deliver the content with node and its routing.
 
 ## Local testing.
