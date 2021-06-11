@@ -18,7 +18,6 @@ Deploy with:
     Outside of git, Node and npm are not needed. The ./dist folder that is built is what should be delivered and has an index file at its root.
 
     After being built, ./dist/index.html needs to be the default landing page and is entirely static.
-    Ideally, only the contents of the dist folder should be deployed. The index.html page in it should handle delivering the widget as intended without a node server needing to be run.
 
 ## Local testing.
   - Install node version 14.x.
