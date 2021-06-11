@@ -19,16 +19,20 @@ Deploy with:
   - run ```$ npm start```
 
     npm run build will build the node modules into static files in ./dist
-    
+
     npm start will do as expected and simply deliver the content with node and its routing.
 
 ## Local testing.
   - Install node version 14.x.
 
   Install dependencies:
+
     - run ```npm install```
+
   Start the server:
+
     - run ```$ npm run build```
+
     - run ```$ npm start```
 
   The content will now all be presented on localhost:5000
@@ -45,6 +49,7 @@ Deploy with:
     - run ```$ git push heroku HEAD:main```
 
   Your work will now be hosted on heroku and fully viewable through the browser.
+  
   Simply open the heroku project to view how it is running.
     - run ```$ heroku open``` 
 
