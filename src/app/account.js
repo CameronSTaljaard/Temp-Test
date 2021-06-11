@@ -3,13 +3,15 @@ const axios = require('axios');
 
 export class AccountPlugin {
   constructor() {
+    console.log("entered constructor");
     new PluginAdapter().init().then(data => {
-      const email = data['ctx.userEmail'];
-      this.lookupAccounts(email);
+      //const email = data['ctx.userEmail'];
+      this.lookupAccounts();
     });
   }
 
   lookupAccounts(userEmail) {
+    console.log("entered poster");
     axios({
       method: 'post',
       url: 'https://api.staffomaticapp.com/v3/accounts',

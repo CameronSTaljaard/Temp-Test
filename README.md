@@ -11,22 +11,27 @@ Deploy with:
 # How to use the widget:
 
 ## Building and serving:
-  Once the project is deployed, it should run:
+  Once the project is deployed, it can do one of two things:
   - run ```$ npm run build```
+  or
+  - run ```$ npm start```
 
-    This will build the node project, with all of its packages into static files in ./dist
-    Outside of git, Node and npm are not needed. The ./dist folder that is built is what should be delivered and has an index file at its root.
+    npm start will do as expected and simply deliver the content with node and its routing.
 
-    After being built, ./dist/index.html needs to be the default landing page and is entirely static.
-    This folder will contain all public node files, such as the manifest.json.
+    npm run build will build the entire project into a ./dist folder. Compiling the entire node project into static files, removing the need of a noder server for the widget, while still maintaining all of the functionality of node.
+    This method can only be used if the index.html can be made into an entrypoint without starting a node instance to route it.
 
 ## Local testing.
   - Install node version 14.x.
 
   Install dependencies:
     - run ```npm install``` 
+  Start the server:
+    - run ```$ npm start```
+
+  The content will now all be presented on localhost:5000
   Build the static files from your node project.
-    - run ```npm run build```
+    - run ```$ npm run build```
 
   Once the build is complete, simply launch the index.html file in ./dist
   The node project and all of its modules will have been rebuilt as static files, allowing you to run this without a node server.
