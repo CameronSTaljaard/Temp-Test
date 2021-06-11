@@ -8,33 +8,29 @@ Deploy with:
  $ npx shipit production deploy
 ```
 
+# Important note:
+  - When testing anywhere other than on COYO, the widget will not have its full functionality as the COYO widget will not initiate, which will cause most functions to never trigger.
+
 # How to use the widget:
 
 ## Building and serving:
-  Once the project is deployed, it can do one of two things:
+  Once the project is deployed:
   - run ```$ npm run build```
-  or
   - run ```$ npm start```
 
+    npm run build will build the node modules into static files in ./dist
     npm start will do as expected and simply deliver the content with node and its routing.
-
-    npm run build will build the entire project into a ./dist folder. Compiling the entire node project into static files, removing the need of a noder server for the widget, while still maintaining all of the functionality of node.
-    This method can only be used if the index.html can be made into an entrypoint without starting a node instance to route it.
 
 ## Local testing.
   - Install node version 14.x.
 
   Install dependencies:
-    - run ```npm install``` 
+    - run ```npm install```
   Start the server:
+    - run ```$ npm run build```
     - run ```$ npm start```
 
   The content will now all be presented on localhost:5000
-  Build the static files from your node project.
-    - run ```$ npm run build```
-
-  Once the build is complete, simply launch the index.html file in ./dist
-  The node project and all of its modules will have been rebuilt as static files, allowing you to run this without a node server.
 
 ## Testing on Heroku
   If you have a Heroku account, simply follow these steps:

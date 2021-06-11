@@ -3,12 +3,12 @@ import {PluginAdapter} from '@coyoapp/plugin-adapter';
 
 export class DemoPlugin {
     constructor() {
-      console.log("entered plugin");
+      console.log("entered plugin constructor");
         new PluginAdapter().init().then(data => {
             const name = data['ctx.userName'];
             const email = data['ctx.userEmail'];
             this.updateVariables(name, email);
-            this.lookupAccounts();
+            this.lookupAccouns();
         });
     }
 
