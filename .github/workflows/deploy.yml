@@ -1,8 +1,7 @@
 name: Staffomatic Coyo Widget
 
 on:
-  [push]
-  [pull_request]
+  [push, pull_request]
 
 jobs:
   build:
