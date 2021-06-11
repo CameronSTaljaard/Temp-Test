@@ -30,6 +30,10 @@ module.exports = shipit => {
     await shipit.remote(`cd ${shipit.releasePath} && npm install`)
   })
 
+  shipit.blTask('npm:build', async () => {
+    await shipit.remote(`cd ${shipit.releasePath} && npm run build`)
+  })
+
   shipit.blTask('server:start', async () => {
     const command = 'chmod +x forever.sh && ./forever.sh'
     await shipit.remote(`cd ${shipit.currentPath} && ${command}`)
@@ -42,6 +46,7 @@ module.exports = shipit => {
 
   shipit.on('published', () => {
     shipit.start('npm:install');
+    shipit.start('npm:build');
   })
 
   shipit.on('deployed', function () {
