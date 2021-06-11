@@ -16,6 +16,8 @@ export class DemoPlugin {
         nameElem.innerText = userName;
         const emailElem = document.getElementById('userEmail');
         emailElem.innerText = userEmail;
+        const emailElem = document.getElementById('userEmail');
+        emailElem.innerText = "I definitely work";
     }
 
     lookupAccounts() {
