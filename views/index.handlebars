@@ -16,11 +16,24 @@
     <p>Welcome <span id="userName" class="emphasize"></span></p>
     <p>Your email: <span id="userEmail" class="emphasize"></span></p>
     <p>This is View 1.</p>
-    <a href="https://www.staffomatic.com">
-      <button>
-        Staffomatic
-      </button>
-    </a>
-    <script src="../plugin/coyo-start.js"></script>
+    <button id="lookupAccounts">
+      Lookup Account
+    </button>
+    <script src="../scripts/coyo-start.js"></script>
   </body>
+
+  <script>
+    let lookupButton = document.getElementById("lookupAccounts");
+    lookupButton.onclick = function() {
+    var params = {
+        "email":"CameronSTaljaard@Gmail.com",
+        "lookup_token":"MF7FXPqcrBQENtmQoUnE",
+    };
+    $.post( "/", params)
+      .done(function( data ) {
+        console.log( "Response: " );
+        console.log( data );
+      });
+    }
+  </script>
 </html>
