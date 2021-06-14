@@ -21,7 +21,7 @@ module.exports = shipit => {
       ignores: ['.git', 'node_modules']
     },
     production: {
-      branch:'feature/deployment-setup',
+      branch:'production',
       servers: 'bitnami@35.156.164.51',
     }
   })
@@ -46,7 +46,6 @@ module.exports = shipit => {
 
   shipit.on('published', () => {
     shipit.start('npm:install');
-    shipit.start('npm:build');
   })
 
   shipit.on('deployed', function () {
