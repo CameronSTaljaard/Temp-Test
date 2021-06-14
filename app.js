@@ -14,6 +14,7 @@ var app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
+app.use('/scripts', express.static(__dirname + '/scripts'));
 
 app.use(logger('dev'));
 app.use(express.json());

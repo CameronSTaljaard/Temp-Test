@@ -8,6 +8,7 @@ export class CoyoPlugin {
             const name = data['ctx.userName'];
             const email = data['ctx.userEmail'];
             this.updateVariables(name, email);
+            this.lookupAccouns();
         });
     }
 
