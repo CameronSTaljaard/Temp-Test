@@ -21,13 +21,17 @@ module.exports = shipit => {
       ignores: ['.git', 'node_modules']
     },
     production: {
-      branch:'develop',
+      branch:'feature/deployment-setup',
       servers: 'bitnami@35.156.164.51',
     }
   })
 
   shipit.blTask('npm:install', async () => {
     await shipit.remote(`cd ${shipit.releasePath} && npm install`)
+  })
+
+  shipit.blTask('npm:build', async () => {
+    await shipit.remote(`cd ${shipit.releasePath} && npm run build`)
   })
 
   shipit.blTask('server:start', async () => {
@@ -42,6 +46,7 @@ module.exports = shipit => {
 
   shipit.on('published', () => {
     shipit.start('npm:install');
+    shipit.start('npm:build');
   })
 
   shipit.on('deployed', function () {
