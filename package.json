@@ -1,10 +1,10 @@
 {
-  "name": "coyo-plugins-getting-started",
+  "name": "Staffomatic Coyo Widget",
   "version": "0.1.2",
-  "description": "A simple getting-started demo project for developing COYO plug-ins",
+  "description": "A simple plugin created for Staffomatic on the COYO platform.",
   "repository": {
     "type": "git",
-    "url": "git+gitlab.com:coyoapp/plugins/plug-in-tutorial.git"
+    "url": "https://github.com/easyPEP/staffomatic-coyo-widge"
   },
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,9 @@
   "dependencies": {
     "@coyoapp/plugin-adapter": "^0.1.7",
     "axios": "^0.21.1",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
     "jwt-decode": "^3.1.2",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
