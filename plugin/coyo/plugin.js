@@ -1,7 +1,7 @@
 import {PluginAdapter} from '@coyoapp/plugin-adapter';
 
 
-export class DemoPlugin {
+export class CoyoPlugin {
     constructor() {
       console.log("entered plugin constructor");
         new PluginAdapter().init().then(data => {
@@ -20,19 +20,19 @@ export class DemoPlugin {
         emailElem.innerText = "I definitely work";
     }
 
-    lookupAccounts() {
-      console.log("Lookup accounts entered");
-      axios({
-        method: 'post',
-        url: 'https://api.staffomaticapp.com/v3/accounts',
-        data: {
-          email: 'CameronSTaljaard@Gmail.com',
-          lookup_token: 'MF7FXPqcrBQENtmQoUnE'
-        }
-      }).then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
-    }
+    //lookupAccounts() {
+    //  console.log("Lookup accounts entered");
+    //  axios({
+    //    method: 'post',
+    //    url: 'https://api.staffomaticapp.com/v3/accounts',
+    //    data: {
+    //      email: 'CameronSTaljaard@Gmail.com',
+    //      lookup_token: 'MF7FXPqcrBQENtmQoUnE'
+    //    }
+    //  }).then((response) => {
+    //    console.log(response);
+    //  }, (error) => {
+    //    console.log(error);
+    //  });
+    //}
 }

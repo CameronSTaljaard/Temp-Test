@@ -8,22 +8,8 @@
     href="https://fonts.googleapis.com/css?family=Source Sans Pro"
   />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $.ajax({
-      type: "POST",
-      url: "https://api.staffomaticapp.com/v3/accounts",
-      crossDomain: true,
-      data: '{"email":"cameronstaljaard@gmail.com", "lookup_token":"MF7FXPqcrBQENtmQoUnE" }',
-      dataType: "json",
-      success: function(responseData, textStatus, jqXHR) {
-        console.log(responseData);
-      },
-      error: function(responseData, textStatus, errorThrown) {
-        console.log("POST failed.");
-      },
-    });
-  </script>
 </head>
+
 <html>
   <body>
     <h1>Hello COYO - Entry Point 1</h1>
@@ -35,6 +21,6 @@
         Staffomatic
       </button>
     </a>
-    <script src="main.js"></script>
+    <script src="../plugin/coyo-start.js"></script>
   </body>
 </html>
